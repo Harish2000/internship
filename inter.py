@@ -13,7 +13,7 @@ def login():
         if(i in a):
             integer=1
         elif i in b:
-            charater=1
+            character=1
         if(integer==1 and character==1):
             break
     user_check=0
