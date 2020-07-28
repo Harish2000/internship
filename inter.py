@@ -21,15 +21,13 @@ def login():
         if i not in b:
             user_check=1
             break
-
-    if(len(password)<6):
+    if(user_check==1):
+        d={"status":"203","msg":"Failure: only characters allowed in username"}
+    elif(len(password)<6):
         d={"status":"201","msg":"Failure: password should be of length 6"}
         return make_response(jsonify(d))
     elif(integer==0 or character==0):
         d={"status":"202","msg":"Failure: password to have 1 character and 1 number"}
-        return make_response(jsonify(d))
-    elif(user_check==1):
-        d={"status":"203","msg":"Failure: only characters allowed in username"}
         return make_response(jsonify(d))
     else:
         d={"status":"200","msg":"Success"}
