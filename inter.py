@@ -23,6 +23,7 @@ def login():
             break
     if(user_check==1):
         d={"status":"203","msg":"Failure: only characters allowed in username"}
+        return make_response(jsonify(d))
     elif(len(password)<6):
         d={"status":"201","msg":"Failure: password should be of length 6"}
         return make_response(jsonify(d))
